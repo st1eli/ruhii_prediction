@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruhii Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        /* Name Animation */
+        .animated-name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fade-in-out 3s infinite;
+        }
+        @media (max-width:700px) {
+            .animated-name {
+            font-size: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fade-in-out 3s infinite;
+        }
+        }
+
+        @keyframes fade-in-out {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Countdown Loader Animation */
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 4px solid transparent;
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Background Overlay */
+        .minabox::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.519);
+            z-index: -1;
+        }
+
+        /* Responsive Typography */
+        .responsive-text {
+            font-size: calc(1rem + 1vw);
+        }
+        .loader-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      border: 10px solid #444;
+      border-radius: 50%;
+      position: absolute;
+      animation: rotate 30s linear forwards;
+      border-top-color: #ff9100;
+    }
+
+    .countdown {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .animated-button{
+        animation: btnclr 1.5s ease-in infinite;
+    }
+    @keyframes btnclr {
+        0%{
+            box-shadow: 0px 0px 4px 4px red;
+            /* background-image: linear-gradient(to top,red,red,rgb(255, 162, 0)); */
+            background-color: red;
+
+transform: scale(1);
+        }50%{
+            
+box-shadow: 0px 0px 4px 4px blue;
+/* background-color: blue;
+ */
+ /* background-image: linear-gradient(to top,blue,blue,rgb(0, 255, 213)); */
+ background-color: blue;
+transform: scale(1.2);
+        }100%{
+            box-shadow: 0px 0px 4px 4px red;
+            /* background-image: linear-gradient(to top,red,red,rgb(255, 162, 0)); */
+            background-color: rgb(0, 255, 64);
+            
+transform: scale(1.1);
+
+        }
+    }
+    </style>
+</head>
+
+<body class="bg-cover bg-center bg-no-repeat bg-[url('back.avif')] text-white flex items-center justify-center min-h-screen minabox overflow-hidden">
+
+    <div class="text-center py-8 rounded-xl shadow-lg w-full max-w-lg">
+        <h1 class="animated-name mb-3 text-3xl">Ruhii Prediction</h1>
+
+        <div class="grid place-items-center">
+        <img src="logo.jpg" alt="" class="w-20 h-20 ">
+    </div>
+        <h2 class="text-sm font-bold mb-2 mt-2 font-sans responsive-text  " style="text-shadow: 1px 0px rgb(0, 89, 255); text-transform: uppercase;">toss and match winner with fixing</h2>
+      <h4 class="font-bold font-sans mb-2"> 💵 JULDI JOIN KARO LAKHO KAMAO 💵</h4>
+       
+    
+    <div class="grid place-items-center">
+        <div class="loader-container">
+          <div class="circle"></div>
+          <div class="countdown" id="countdown">30</div>
+        </div>
+      </div>
+        <!-- Buttons -->
+         <div class="grid place-items-center">
+        <button onclick="redirectToLink()" class="animated-button flex place-items-center gap-2 py-3 px-4  border-4 border-black rounded-sm text-sm font-bold my-6 hover:bg-blue-600 transition-all duration-200 shadow shadow-blue-600" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+              </svg>
+              <span class="uppercase" > JOIN Ruhii Prediction TELEGRAM  </span>
+        </button>
+    </div>
+    <!-- Additional Info -->
+    <h3 class="text-sm mb-3 font-serif font-bold">Telegram Group Join👆❤️</h3>
+        <h3 class="text-sm mb-3 font-serif font-bold">📈 Indian Most Popular  Tipper 📈</h3>
+        <!-- <h3 class="text-sm mb-3 font-serif font-bold">🤝 BIGGEST TIPPER  🤝</h3> -->
+       <div class="flex justify-between gap-3 mb-3">
+        <img src="img.jpeg" alt=".." class="w-16 h-16 rounded-lg ">
+        <img src="img.jpg" alt=".." class="w-16 h-16 rounded-lg ">
+        <img src="img.png" alt=".." class="w-16 h-16 rounded-lg ">
+        <img src="img.webp" alt=".." class="w-16 h-16 rounded-lg ">
+    </div>
+        <h2 class="text-center uppercase text-3xl "> FREE JOINING ENDS IN ... <strong class="text-red-500 font-sans " style="text-shadow: 2px 1px rgb(255, 179, 0);" id="timer2">30</strong> </h3>
+        <p class="text-center "> Join Original Telegram Channel </p>
+    </div>
+    <script>
+        // Countdown Timer Functionality
+        let loader1=document.getElementById('loader1');
+        const timer2=document.getElementById('timer2');
+        function countdown() {
+            let seconds = 30;
+            const countdownElement = document.getElementById("countdown");
+            countdownElement.innerText = seconds;
+            timer2.innerText=seconds;
+
+            const timer = setInterval(function () {
+                seconds--;
+                countdownElement.innerText = seconds;
+                timer2.innerText=seconds;
+                if(seconds==0){
+                    seconds=30;
+                }
+               
+            }, 1000);
+        }
+
+        // Redirect to Telegram link
+        function redirectToLink() {
+            window.location.href = "https://t.me/+bQQnFMRDW_41YTg1";
+        }
+
+          window.onload = countdown;
+    </script>
+     <script>
+        
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+            
+        });
+        
+        
+        document.addEventListener("keydown", function (e) {
+            if (e.ctrlKey && e.key === "u") {
+                e.preventDefault();
+                
+            }
+        });
+        
+        
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+                e.preventDefault();
+                
+            }
+        });
+        
+            </script>
+
+</body>
+
+</html>
